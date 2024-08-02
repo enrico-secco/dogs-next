@@ -34,7 +34,7 @@ export default async function login(state: {}, formData: FormData) {
 
         return {
             ok: true,
-            error: null,
+            error: '',
             data: null,
         };
 
