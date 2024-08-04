@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const metadaat: Metadata = {
+export const metadata: Metadata = {
     title: "Recuperar senha | Dogs",
     description: "Recupere sua senha no Dogs.",
 }
