@@ -32,7 +32,7 @@ export default function LoginPerdeuForm() {
     return (
         <>
             <form action={action} className={styles.form}>
-                <Input label="Usuário / Usuário" name="login" type="text" />
+                <Input label="Usuário / Email" name="login" type="text" />
                 <input type="hidden" name="url" value={url} />
                 <ErrorMessage error={state.error} />
                 {state.ok ?
