@@ -23,3 +23,9 @@ export function PASSWORD_RESET() {
         url: API_URL + '/api/password/reset',
     }
 }
+
+export function USER_GET() {
+    return {
+        url: API_URL + '/api/user',
+    }
+}
