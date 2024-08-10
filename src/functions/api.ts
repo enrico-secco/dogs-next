@@ -10,4 +10,10 @@ export function USER_POST() {
     return {
         url: API_URL + '/api/user',
     }
-}  
+}
+
+export function PASSWORD_LOST() {
+    return {
+        url: API_URL + '/api/password/lost',
+    }
+}
