@@ -2,14 +2,8 @@
 
 import { USER_GET } from "@/functions/api";
 import apiError from "@/functions/api-error";
+import { User } from "@/types/user";
 import { cookies } from "next/headers";
-
-export type User = {
-    id: number;
-    nome: string;
-    email: string;
-    username: string;
-}
 
 export default async function userGet() {
 
