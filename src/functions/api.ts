@@ -29,3 +29,9 @@ export function USER_GET() {
         url: API_URL + '/api/user',
     }
 }
+
+export function PHOTO_POST() {
+    return {
+        url: API_URL + '/api/photo',
+    }
+}  

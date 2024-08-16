@@ -21,9 +21,9 @@ function getTitle(pathname: string) {
         case estatisticasUrl:
             return 'Estatísticas';
         case postarUrl:
-            return 'Poste sua foto';
+            return 'Poste Sua Foto';
         default:
-            return 'Minha conta';
+            return 'Minha Conta';
     }
 }
 
