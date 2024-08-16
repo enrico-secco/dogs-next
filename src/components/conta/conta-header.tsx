@@ -9,12 +9,18 @@ import styles from './conta-header.module.css';
 import { usePathname } from 'next/navigation';
 import useMedia from '@/hooks/use-media';
 import Link from 'next/link';
+import logout from '@/actions/logout';
+import { useUser } from '@/context/user-context';
+
+const contaUrl = '/conta';
+const estatisticasUrl = 'conta/estatisticas';
+const postarUrl = '/conta/postar';
 
 function getTitle(pathname: string) {
     switch (pathname) {
-        case '/conta/estatisticas':
+        case estatisticasUrl:
             return 'Estatísticas';
-        case '/conta/postar':
+        case postarUrl:
             return 'Poste sua foto';
         default:
             return 'Minha conta';
@@ -24,17 +30,17 @@ function getTitle(pathname: string) {
 export default function ContaHeader() {
     const mobile = useMedia('(max-width: 40rem)');
     const [mobileMenu, setMobileMenu] = React.useState(false);
-    const contaUrl = '/conta';
-    const estatisticasUrl = 'conta/estatisticas';
-    const postarUrl = '/conta/postar';
+    const { setUser } = useUser();
+
 
     const pathname = usePathname();
     React.useEffect(() => {
         setMobileMenu(false);
     }, [pathname]);
 
-    function handleLogout() {
-        //TODO: Implement logout
+    async function handleLogout() {
+        await logout();
+        setUser(null);
     }
 
     return (
