@@ -47,6 +47,10 @@ export default function Feed({ photos, user }: { photos: Photo[], user?: 0 | str
             window.removeEventListener('scroll', infiniteScroll);
             window.removeEventListener('wheel', infiniteScroll);
         }
+        return () => {
+            window.removeEventListener('scroll', infiniteScroll);
+            window.removeEventListener('wheel', infiniteScroll);
+        };
     }, [infinite]);
 
     return (
