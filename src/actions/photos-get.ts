@@ -14,18 +14,15 @@ export default async function photosGet({
     page = 1,
     total = 6,
     user = 0
-}: PhotosGetParams = {}) {
+}: PhotosGetParams = {}, optionsFront?: RequestInit) {
 
     try {
+        const options = optionsFront || {
+            next: { revalidate: 10, tags: ['photos'] }
+        };
+
         const { url } = PHOTOS_GET({ page, total, user });
-        const response = await fetch(url,
-            {
-                next: {
-                    revalidate: 10,
-                    tags: ['photos']
-                }
-            }
-        );
+        const response = await fetch(url, options);
 
         if (!response.ok) {
             throw new Error(`Erro ao obter as fotos.`);

@@ -1,6 +1,6 @@
 import photosGet from "@/actions/photos-get";
 import userGet from "@/actions/user-get";
-import FeedPhotos from "@/components/feed/feed-photos";
+import Feed from "@/components/feed/feed";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -13,9 +13,9 @@ export default async function ContaPage() {
     const { data } = await photosGet({ user: user?.username });
 
     return (
-        <main>
+        <section>
             {data?.length ? (
-                <FeedPhotos photos={data} />
+                <Feed photos={data} user={user?.username} />
             ) : (
                 <div>
                     <p style={{ color: '#444', fontSize: '1.25rem', marginBottom: '1rem' }}>
@@ -26,6 +26,6 @@ export default async function ContaPage() {
                     </Link>
                 </div>
             )}
-        </main>
+        </section>
     );
 }
