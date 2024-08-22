@@ -1,3 +1,5 @@
+import { Comment } from './comment';
+
 export type Photo = {
     id: number;
     author: string;
@@ -8,4 +10,9 @@ export type Photo = {
     idade: string;
     acessos: string;
     total_comments: string;
+}
+
+export type PhotoData = {
+    photo: Photo;
+    comments: Comment[];
 }
