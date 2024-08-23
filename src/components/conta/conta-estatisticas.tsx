@@ -26,7 +26,7 @@ export default function ContaEstatisticas({ data }: { data: Stats[] }) {
             data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b, 0),
         );
         setGraph(graphData);
-    }, [data, graph]);
+    }, [data]);
 
     return (
         <section className={`${styles.graph} animeLeft`}>
