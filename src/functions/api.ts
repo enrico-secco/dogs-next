@@ -57,3 +57,9 @@ export function PHOTO_DELETE(id: string) {
         url: API_URL + `/api/photo/${id}`,
     }
 }
+
+export function COMMENT_POST(id: string) {
+    return {
+        url: API_URL + `/api/comment/${id}`,
+    }
+}
