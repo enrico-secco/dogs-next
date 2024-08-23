@@ -63,3 +63,9 @@ export function COMMENT_POST(id: string) {
         url: API_URL + `/api/comment/${id}`,
     }
 }
+
+export function STATS_GET() {
+    return {
+        url: API_URL + '/api/stats',
+    }
+}

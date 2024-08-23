@@ -1,3 +1,5 @@
+import statsGet from "@/actions/stats-get";
+import ContaEstatisticas from "@/components/conta/conta-estatisticas";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -5,9 +7,13 @@ export const metadata: Metadata = {
 }
 
 export default async function EstatisticasPage() {
+    const { data } = await statsGet();
+
+    if (!data) return null;
+
     return (
         <div>
-            <h1 className="title">Estatisticas</h1>
+            <ContaEstatisticas data={data} />
         </div>
     );
 }
